@@ -7,7 +7,7 @@ const save = async (favNumber) => {
   console.log("saving");
   await s3.putObject({
     Body: JSON.stringify(favNumber, null, 2),
-    Bucket: "cyclic-delightful-ant-fashion-eu-north-1",
+    Bucket: "cyclic-nice-pear-mussel-shoe-eu-north-1",
     Key: "number.json",
   }).promise()
 };

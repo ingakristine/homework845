@@ -9,7 +9,7 @@ const router = new Router();
 
 router.get("/sum/:number1/:number2", async (req, res) => {
   let my_file = await s3.getObject({
-    Bucket: "cyclic-delightful-ant-fashion-eu-north-1",
+    Bucket: "cyclic-nice-pear-mussel-shoe-eu-north-1",
     Key: "number.json",
   }).promise()
   const favNumber = JSON.parse(my_file.Body)?.favouriteNumber;
@@ -50,13 +50,5 @@ router.post("/favNumber", async (req, res) => {
     newFavouriteNumber: number,
   });
 });
-
-// router.delete("/favNumber", (req, res) => {
-//   favouriteNumber.favouriteNumber = 0; 
-//   save(favouriteNumber);
-//   res.json({
-//     status: "success"
-//   });
-// });
 
 module.exports = router;
