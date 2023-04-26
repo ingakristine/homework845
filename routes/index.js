@@ -4,8 +4,11 @@ let favouriteNumber = require("../number.json");
 const add = require("../add");
 const AWS = require("aws-sdk");
 const s3 = new AWS.S3();
-
 const router = new Router();
+
+router.get('/', function(req, res){
+  res.send("Welcome to the calculator app.");
+})
 
 router.get("/sum/:number1/:number2", async (req, res) => {
   let my_file = await s3.getObject({
